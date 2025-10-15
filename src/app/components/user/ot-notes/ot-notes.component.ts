@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { NavBarComponent } from '../../nav-bar/nav-bar.component';
+import { SidebarComponent } from '../../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-ot-notes',
-  imports: [],
+  imports: [NavBarComponent,SidebarComponent],
   templateUrl: './ot-notes.component.html',
-  styleUrl: './ot-notes.component.css'
+  styleUrls: ['./ot-notes.component.css']
 })
 export class OtNotesComponent {
 

@@ -1,7 +1,7 @@
 <app-nav-bar></app-nav-bar>
 <div class="sidebar">
   <ul>
-    <li routerLink="/careunit" *ngIf="role === 'Admin'">
+    <li routerLink="/careunit" routerLinkActive="active" *ngIf="role === 'Admin'">
       <i class="fas fa-notes-medical">
         <svg
           fill="#ffffff"
@@ -20,7 +20,7 @@
       </i>
       <span>Care Unit</span>
     </li>
-    <li routerLink="/beds" *ngIf="role === 'Admin'">
+    <li routerLink="/beds" routerLinkActive="active" *ngIf="role === 'Admin'">
       <i class="fas fa-clone">
         <svg
           width="23px"
@@ -65,8 +65,8 @@
       </i>
       <span>Beds</span>
     </li>
-    <li routerLink="/staff" *ngIf="role === 'Admin'">
-      <i class="fas fa-user">
+    <li routerLink="/staff" routerLinkActive="active" *ngIf="role === 'Admin'">
+      <i class="fas fa-user-md">
         <svg
           width="23px"
           height="25px"
@@ -95,7 +95,7 @@
       </i>
       <span>Staff</span>
     </li>
-    <li routerLink="/fluids" *ngIf="role === 'Admin'">
+    <li routerLink="/fluids" routerLinkActive="active" *ngIf="role === 'Admin'">
       <i class="fas fa-chart-bar">
         <svg
           version="1.1"
@@ -138,7 +138,7 @@
       </i>
       <span>Fluids</span>
     </li>
-    <li routerLink="/medications" *ngIf="role === 'Admin'">
+    <li routerLink="/medications" routerLinkActive="active" *ngIf="role === 'Admin'">
       <i class="fas fa-chart-bar">
         <svg
           fill="#ffffff"
@@ -207,7 +207,7 @@
       </i>
       <span>Medications</span>
     </li>
-    <li routerLink="/hospital" *ngIf="role === 'Admin'">
+    <li routerLink="/hospital" routerLinkActive="active" *ngIf="role === 'Admin'">
       <i class="fas fa-chart-bar">
         <svg
           width="23px"
@@ -330,7 +330,7 @@
     </li>
   </ul>
   <ul>
-    <li routerLink="/userflowsheet" *ngIf="role !== 'Admin'">
+    <li routerLink="/userflowsheet" routerLinkActive="active" *ngIf="role !== 'Admin'">
       <i class="fas fa-notes-medical">
         <svg
           fill="#ffffff"
@@ -349,7 +349,7 @@
       </i>
       <span>Flow Sheet</span>
     </li>
-    <li routerLink="/userfluids" *ngIf="role !== 'Admin'">
+    <li routerLink="/user-flow-sheet" routerLinkActive="active" *ngIf="role !== 'Admin'">
       <i class="fas fa-clone">
         <svg
           width="23px"
@@ -394,7 +394,7 @@
       </i>
       <span>Fluids</span>
     </li>
-    <li routerLink="/usermedications" *ngIf="role !== 'Admin'">
+    <li routerLink="/usermedications" routerLinkActive="active" *ngIf="role !== 'Admin'">
       <i class="fas fa-user">
         <svg
           width="23px"
@@ -424,7 +424,7 @@
       </i>
       <span>Medications</span>
     </li>
-    <li routerLink="/otnotes" *ngIf="role !== 'Admin'">
+    <li routerLink="/otnotes" routerLinkActive="active" *ngIf="role !== 'Admin'">
       <i class="fas fa-chart-bar">
         <svg
           version="1.1"
@@ -467,7 +467,7 @@
       </i>
       <span>OT Notes</span>
     </li>
-    <li routerLink="/userstaff" *ngIf="role !== 'Admin'">
+    <li routerLink="/userstaff" routerLinkActive="active" *ngIf="role !== 'Admin'">
       <i class="fas fa-chart-bar">
         <svg
           fill="#ffffff"
@@ -536,7 +536,7 @@
       </i>
       <span>Staff</span>
     </li>
-    <li routerLink="/finalreport" *ngIf="role !== 'Admin'">
+    <li routerLink="/finalreport" routerLinkActive="active" *ngIf="role !== 'Admin'">
       <i class="fas fa-chart-bar">
         <svg
           width="23px"

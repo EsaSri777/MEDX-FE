@@ -82,7 +82,7 @@ export const routes: Routes = [
     canActivate: [routeGaurdGuard],
   },
   {
-     path: 'user-flow-sheet/:id', component: UserFlowSheetComponent 
+     path: 'user-flow-sheet', component: UserFlowSheetComponent 
   },
   {
     path: 'admitpatient',

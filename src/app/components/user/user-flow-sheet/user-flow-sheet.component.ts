@@ -1,9 +1,11 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NavBarComponent } from '../../nav-bar/nav-bar.component';
+import { SidebarComponent } from '../../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-user-flow-sheet',
-  imports: [],
+  imports: [NavBarComponent,SidebarComponent],
   templateUrl: './user-flow-sheet.component.html',
   styleUrls: ['./user-flow-sheet.component.css']
 })

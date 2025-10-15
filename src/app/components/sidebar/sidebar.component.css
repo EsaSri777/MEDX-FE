@@ -1,7 +1,7 @@
 .sidebar {
     width: 130px;
     height: calc(100vh - 56px);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, rgb(48, 129, 216) 100%);
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
     position: fixed;
     left: 0;
@@ -29,12 +29,12 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .sidebar li:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(36, 18, 96, 0.2);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 .sidebar li.active {
-    background: rgba(81, 81, 194, 0.9);
+    background: rgba(36, 18, 96, 0.2);
     box-shadow: 0 5px 20px rgba(81, 81, 194, 0.3);
     border: 1px solid rgba(81, 81, 194, 0.5);
 }
@@ -63,8 +63,8 @@
 .sidebar li.active svg path,
 .sidebar li.active svg line,
 .sidebar li.active svg polyline {
-    fill: rgb(81, 81, 194);
-    stroke: rgb(81, 81, 194);
+    fill:  #ffffff;
+    stroke: #ffffff;
 }
 .sidebar li span {
     font-size: 14px;

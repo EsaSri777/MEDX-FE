@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { NavBarComponent } from '../../nav-bar/nav-bar.component';
+import { SidebarComponent } from '../../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-user-staff',
-  imports: [],
+  imports: [NavBarComponent, SidebarComponent],
   templateUrl: './user-staff.component.html',
-  styleUrl: './user-staff.component.css'
+  styleUrls: ['./user-staff.component.css']
 })
 export class UserStaffComponent {
 

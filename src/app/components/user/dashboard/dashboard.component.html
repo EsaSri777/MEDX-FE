@@ -4,11 +4,7 @@
   <!-- Filter Dropdown -->
   <div class="filter-container">
     <label for="careUnit">Care Unit:</label>
-    <select
-      id="careUnit"
-      [(ngModel)]="selectedUnit"
-      (change)="getPatientsByCUID()"
-    >
+    <select id="careUnit" [(ngModel)]="selectedUnit" (change)="getPatientsByCUID()">
       <option value="">-- Select Care Unit --</option>
       <option *ngFor="let unit of careUnits" [value]="unit._id">
         {{ unit.careUnit }}
@@ -18,25 +14,21 @@
 
   <!-- Patient Cards -->
   <div class="patient-card-container">
-    <div
-      *ngFor="let patient of filteredPatients; let i = index"
-      class="patient-card"
-      [ngClass]="patient.careUnit.replace(' ', '')"
-      [style.animationDelay]="i * 0.1 + 's'"
-    >
+    <div *ngFor="let patient of filteredPatients; let i = index" class="patient-card"
+      [style.animationDelay]="i * 0.1 + 's'">
       <!-- Card Header with Bed Name -->
       <div class="card-header">
         <span class="card-title">Bed: {{ patient.bedName }}</span>
-        <span class="card-arrow">→</span>
-      
-      <hr />
-      <!-- Card Body -->
-      <div class="card-body">
-        <h3>{{ patient.name }}</h3>
-        <p><strong>Age:</strong> {{ patient.age }}</p>
-        <p><strong>Care Unit:</strong> {{ patient.careUnit }}</p>
-        <p><strong>Condition:</strong> {{ patient.condition }}</p>
+        <span class="card-arrow" routerLink="/user-flow-sheet">→</span>
+
+        <hr style="background-color: black;">
+        <!-- Card Body -->
+        <div class="card-body">
+          <p><strong>Name:</strong> {{ patient.name | titlecase }}</p>
+
+          <p><strong>Age:</strong> {{ patient.age }}</p>
+          <p><strong>Condition:</strong> <span [ngStyle]="{'color': getConditionColor(patient.severity)}">{{ patient.severity | titlecase }}</span></p>
+        </div>
       </div>
     </div>
   </div>
-</div>
