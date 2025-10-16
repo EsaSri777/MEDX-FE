@@ -2,10 +2,9 @@
   class="main-container"
   style="background-color: rgb(48, 129, 216); height: 100vh; width: 100vw"
 >
-  <div class="login-card">
+  <div class="login-card" style="background-color: white">
     <div class="header">
-      <h1 class="header-title">Welcome Back</h1>
-      <p class="header-subtitle">Sign in to your account</p>
+      <h1 class="header-title" style="color: rgb(48, 129, 216)">MEDX</h1>
     </div>
 
     <form>
@@ -35,16 +34,10 @@
         type="submit"
         [ngClass]="true ? 'btn btn-primary' : 'btn btn-secondary'"
         (click)="signIn()"
+        style="background-color: rgb(48, 129, 216); color: white"
       >
         Sign In
       </button>
     </form>
-
-    <div class="footer-text">
-      <p>
-        Don't have an account?
-        <a routerLink="/registration" class="signup-link">Sign Up</a>
-      </p>
-    </div>
   </div>
 </div>

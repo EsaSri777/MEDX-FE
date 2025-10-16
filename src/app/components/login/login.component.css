@@ -54,7 +54,7 @@ form {
 .form-control {
   padding: 12px 14px;
   font-size: 14px;
-  border: 2px solid #c3c8a1;
+  border: 2px solid rgb(147, 172, 198);
   border-radius: 6px;
   background-color: #ffffff;
   outline: none;
@@ -132,9 +132,9 @@ form {
     font-size: 24px;
   }
 }
-.main-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.main-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }

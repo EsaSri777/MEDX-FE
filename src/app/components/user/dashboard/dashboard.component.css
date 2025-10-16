@@ -2,11 +2,12 @@
    DASHBOARD CONTAINER
 ======================= */
 .dashboard-container {
-  padding: 80px 40px 40px 40px; /* space for navbar */
+  padding: 80px 40px 40px 40px;
   background: linear-gradient(135deg, #eef2f3, #d9e4f5);
   min-height: 100vh;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
 }
 
 /* =======================
@@ -29,14 +30,14 @@
 .filter-container label {
   font-weight: 600;
   color: #2f3e46;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 #careUnit {
   padding: 10px 14px;
   border-radius: 10px;
   border: none;
-  font-size: 15px;
+  font-size: 18px;
   background: #ffffff;
   color: #333;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
@@ -61,22 +62,15 @@
   transition: all 0.3s ease;
 }
 
-/* Center if only one card is present */
-.patient-card-container:has(.patient-card:only-child) {
-  justify-content: center;
-}
-
 /* =======================
-   MODERN STATIC CARD STYLE
+   CARD DESIGN
 ======================= */
 .patient-card {
   background: linear-gradient(145deg, #ffffffcc, #f0f3f7cc);
   border-radius: 18px;
-  box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.05),
-    0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 8px 20px rgba(0, 0, 0, 0.08);
   padding: 25px;
-  width: 260px;
+  width: 490px;
   border-top: 5px solid #5a67d8;
   backdrop-filter: blur(6px);
   transition: all 0.4s ease;
@@ -84,18 +78,156 @@
   transform: scale(0.95);
   animation: fadeScaleIn 0.4s forwards;
   cursor: default;
+  color: #fff;
 }
 
-/* Hover effect */
 .patient-card:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow:
-    0 6px 14px rgba(0, 0, 0, 0.1),
-    0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1), 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* =======================
-   ANIMATION FOR CARDS
+   HEADER
+======================= */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 20px;
+  color: #1e293b;
+}
+
+.card-arrow {
+  font-size: 32px;
+  color: #5a67d8;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.patient-card:hover .card-arrow {
+  transform: translateX(3px);
+}
+
+.patient-card hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+}
+
+/* =======================
+   CARD BODY
+======================= */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Align labels and values */
+.info-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  color: #1e293b;
+  margin: 4px 0;
+}
+
+.info-line strong {
+  font-weight: 600;
+  width: 120px; /* fixed width for alignment */
+  text-align: left;
+  color: #1e293b;
+}
+
+.info-line span {
+  flex: 1;
+  text-align: left;
+  color: #334155;
+}
+
+/* =======================
+   COLORS BY SEVERITY
+======================= */
+.patient-card.normal {
+  background-color: #28a745;
+}
+
+.patient-card.severe {
+  background-color: #ff9800;
+}
+
+.patient-card.critical {
+  background-color: #dc3545;
+}
+
+/* ---------- ALIGN LABEL, COLON, VALUE NEATLY ---------- */
+.info-line {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin: 8px 0;
+  color: #1e293b;
+  letter-spacing: 0.5px;
+}
+
+/* Label (fixed width so everything aligns) */
+.info-line .label {
+  width: 130px; /* adjust this to align colon properly */
+  font-weight: 600;
+}
+
+/* Colon (spaced neatly) */
+.info-line .colon {
+  width: 20px;
+  text-align: center;
+}
+
+/* Value (left aligned, flexible width) */
+.info-line .value {
+  flex: 1;
+  color: #1e293b;
+}
+/* ---------- CLEANER ALIGNMENT FOR LABEL, COLON, VALUE ---------- */
+.info-line {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin: 8px 0;
+  color: #1e293b;
+  letter-spacing: 0.3px;
+}
+
+/* Label (slightly reduced width for better colon alignment) */
+.info-line .label {
+  width: 110px; /* was 130px — closer now */
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Colon (closer to label now) */
+.info-line .colon {
+  width: 10px; /* was 20px */
+  text-align: center;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Value (remains neatly aligned) */
+.info-line .value {
+  flex: 1;
+  padding-left: 10px; /* small indent after colon */
+  color: #1e293b;
+  word-break: break-word; /* prevents overflow for long names */
+}
+
+/* =======================
+   ANIMATION
 ======================= */
 @keyframes fadeScaleIn {
   0% {
@@ -108,115 +240,13 @@
   }
 }
 
-/* Staggered animation delay for multiple cards */
-.patient-card:nth-child(1) { animation-delay: 0s; }
-.patient-card:nth-child(2) { animation-delay: 0.1s; }
-.patient-card:nth-child(3) { animation-delay: 0.2s; }
-.patient-card:nth-child(4) { animation-delay: 0.3s; }
-.patient-card:nth-child(5) { animation-delay: 0.4s; }
-
 /* =======================
-   CARD SIZE ADAPTIVE LOGIC
-======================= */
-.patient-card-container:has(.patient-card:only-child) .patient-card {
-  width: 450px;
-  padding: 35px;
-  font-size: 17px;
-}
-
-.patient-card-container:has(.patient-card:nth-child(2):last-child) .patient-card {
-  width: 350px;
-  padding: 30px;
-}
-
-.patient-card-container:has(.patient-card:nth-child(3)) .patient-card {
-  width: 260px;
-  padding: 25px;
-}
-
-/* =======================
-   CARD HEADER
-======================= */
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.card-title {
-  font-weight: 600;
-  font-size: 16px;
-  color: #1e293b;
-}
-
-.card-arrow {
-  font-size: 18px;
-  color: #5a67d8;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.patient-card:hover .card-arrow {
-  transform: translateX(3px);
-}
-
-/* Horizontal line after header */
-.patient-card hr {
-  border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 10px 0;
-}
-
-/* =======================
-   CARD BODY TEXT
-======================= */
-.patient-card h3 {
-  margin-bottom: 12px;
-  color: #1e293b;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.patient-card p {
-  margin: 6px 0;
-  font-size: 15px;
-  color: #475569;
-}
-
-.patient-card strong {
-  color: #1e293b;
-}
-
-/* =======================
-   CARD COLOR ACCENT BY CARE UNIT
-======================= */
-.patient-card.ICU {
-  border-top-color: #e63946;
-  background: linear-gradient(145deg, #ffe5e5cc, #fff7f7cc);
-}
-
-.patient-card.GeneralWard {
-  border-top-color: #219ebc;
-  background: linear-gradient(145deg, #e0f7ffcc, #f7fcffcc);
-}
-
-.patient-card.Pediatrics {
-  border-top-color: #06d6a0;
-  background: linear-gradient(145deg, #e6fff5cc, #f5fffacc);
-}
-
-.patient-card.Emergency {
-  border-top-color: #f77f00;
-  background: linear-gradient(145deg, #fff3e6cc, #fff9f3cc);
-}
-
-/* =======================
-   RESPONSIVE BEHAVIOR
+   RESPONSIVE
 ======================= */
 @media (max-width: 768px) {
   .dashboard-container {
     padding: 70px 20px 20px 20px;
+    font-size: 16px;
   }
 
   .filter-container {
@@ -228,7 +258,11 @@
     width: 100%;
   }
 
-  .patient-card-container:has(.patient-card:only-child) .patient-card {
-    width: 90%;
+  .info-line strong {
+    width: 100px;
+  }
+
+  .info-line {
+    font-size: 17px;
   }
 }

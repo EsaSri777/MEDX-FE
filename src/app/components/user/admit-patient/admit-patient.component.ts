@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { BedsServiceService } from '../../../service/beds-service.service';
 import { UsersServiceService } from '../../../service/user-service.service';
 import { PatientservieceService } from '../../../service/patientserviece.service';
+import { RouterLink } from '@angular/router';
 
 interface CareUnit {
   _id: string;
@@ -28,7 +29,13 @@ interface Staff {
 @Component({
   selector: 'app-admit-patient',
   standalone: true,
-  imports: [NavBarComponent, FormsModule, CommonModule, ReactiveFormsModule],
+  imports: [
+    NavBarComponent,
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule,
+    RouterLink,
+  ],
   templateUrl: './admit-patient.component.html',
   styleUrl: './admit-patient.component.css',
 })

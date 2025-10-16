@@ -8,7 +8,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [NavBarComponent, FormsModule, CommonModule,RouterModule,RouterLink],
+  imports: [NavBarComponent, FormsModule, CommonModule, RouterLink],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })

@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { RegistrationComponent } from './components/registration/registration.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { CareunitComponent } from './components/admin/careunit/careunit.component';
 import { BedsComponent } from './components/admin/beds/beds.component';
@@ -23,7 +22,6 @@ export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
 
-  { path: 'registration', component: RegistrationComponent },
   {
     path: 'features',
     component: FeaturesComponent,
@@ -82,7 +80,8 @@ export const routes: Routes = [
     canActivate: [routeGaurdGuard],
   },
   {
-     path: 'user-flow-sheet', component: UserFlowSheetComponent 
+    path: 'user-flow-sheet',
+    component: UserFlowSheetComponent,
   },
   {
     path: 'admitpatient',

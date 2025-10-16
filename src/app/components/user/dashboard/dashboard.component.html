@@ -4,7 +4,11 @@
   <!-- Filter Dropdown -->
   <div class="filter-container">
     <label for="careUnit">Care Unit:</label>
-    <select id="careUnit" [(ngModel)]="selectedUnit" (change)="getPatientsByCUID()">
+    <select
+      id="careUnit"
+      [(ngModel)]="selectedUnit"
+      (change)="getPatientsByCUID()"
+    >
       <option value="">-- Select Care Unit --</option>
       <option *ngFor="let unit of careUnits" [value]="unit._id">
         {{ unit.careUnit }}
@@ -14,21 +18,42 @@
 
   <!-- Patient Cards -->
   <div class="patient-card-container">
-    <div *ngFor="let patient of filteredPatients; let i = index" class="patient-card"
-      [style.animationDelay]="i * 0.1 + 's'">
-      <!-- Card Header with Bed Name -->
+    <div
+      *ngFor="let patient of filteredPatients; let i = index"
+      class="patient-card"
+      [ngClass]="{
+        normal: patient.severity?.toLowerCase() === 'normal',
+        severe: patient.severity?.toLowerCase() === 'severe',
+        critical: patient.severity?.toLowerCase() === 'critical'
+      }"
+      [style.animationDelay]="i * 0.1 + 's'"
+    >
+      <!-- Card Header -->
       <div class="card-header">
-        <span class="card-title">Bed: {{ patient.bedName }}</span>
+        <span class="card-title">Bed:</span>
         <span class="card-arrow" routerLink="/user-flow-sheet">→</span>
 
-        <hr style="background-color: black;">
+        <hr />
+
         <!-- Card Body -->
         <div class="card-body">
-          <p><strong>Name:</strong> {{ patient.name | titlecase }}</p>
-
-          <p><strong>Age:</strong> {{ patient.age }}</p>
-          <p><strong>Condition:</strong> <span [ngStyle]="{'color': getConditionColor(patient.severity)}">{{ patient.severity | titlecase }}</span></p>
+          <p class="info-line">
+            <span class="label">Name</span>
+            <span class="colon">:</span>
+            <span class="value">{{ patient.name }}</span>
+          </p>
+          <p class="info-line">
+            <span class="label">Age</span>
+            <span class="colon">:</span>
+            <span class="value">{{ patient.age }}</span>
+          </p>
+          <p class="info-line">
+            <span class="label">Condition</span>
+            <span class="colon">:</span>
+            <span class="value">{{ patient.severity }}</span>
+          </p>
         </div>
       </div>
     </div>
   </div>
+</div>
