@@ -30,29 +30,26 @@
     >
       <!-- Card Header -->
       <div class="card-header">
-        <span class="card-title">Bed:</span>
-        <span class="card-arrow" routerLink="/user-flow-sheet">→</span>
+        <span class="card-title">Bed {{ patient.bedName }}</span>
+        <span class="card-arrow" routerLink="/user-flow-sheet" [queryParams]="{patientId: patient._id}" title="View Details">→</span>
+      </div>
 
-        <hr />
-
-        <!-- Card Body -->
-        <div class="card-body">
-          <p class="info-line">
-            <span class="label">Name</span>
-            <span class="colon">:</span>
-            <span class="value">{{ patient.name }}</span>
-          </p>
-          <p class="info-line">
-            <span class="label">Age</span>
-            <span class="colon">:</span>
-            <span class="value">{{ patient.age }}</span>
-          </p>
-          <p class="info-line">
-            <span class="label">Condition</span>
-            <span class="colon">:</span>
-            <span class="value">{{ patient.severity }}</span>
-          </p>
-        </div>
+      <!-- Card Body -->
+      <div class="card-body">
+        <p>
+          <strong>Name:</strong> 
+          <span>{{ patient.name | titlecase }}</span>
+        </p>
+        <p>
+          <strong>Age:</strong>
+          <span>{{ patient.age }} years</span>
+        </p>
+        <p>
+          <strong>Condition:</strong>
+          <span [ngStyle]="{'color': getConditionColor(patient.severity)}">
+            {{ patient.severity | titlecase }}
+          </span>
+        </p>
       </div>
     </div>
   </div>
