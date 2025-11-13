@@ -208,7 +208,12 @@
       </div>
 
       <div class="text-center mt-4">
-        <button type="submit" class="btn btn-submit btn-custom me-2">
+        <button
+          type="submit"
+          class="btn btn-submit btn-custom me-2"
+          routerLink="/dashboard"
+          [disabled]="admitForm.invalid"
+        >
           Submit
         </button>
         <button

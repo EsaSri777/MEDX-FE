@@ -45,6 +45,7 @@ export class DashboardComponent implements OnInit {
       if (Array.isArray(res)) {
         this.patients = res;
         this.filteredPatients = res;
+        console.log('Filtered Patients:', this.filteredPatients);
       }
     });
   }
